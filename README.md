@@ -1,4 +1,4 @@
-[9/27, 21:55] Jeffo: from flask import Flask , render_template,request,json
+from flask import Flask , render_template,request,json
 app = Flask(_name_)
 
 @app.route('/')
