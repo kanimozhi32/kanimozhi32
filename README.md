@@ -1,16 +1,49 @@
-### Hi there 👋
+[9/27, 21:55] Jeffo: from flask import Flask , render_template,request,json
+app = Flask(_name_)
 
-<!--
-**kanimozhi32/kanimozhi32** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+@app.route('/')
+def home():
+    return  render_template('index.html')
+@app.route("/siginin",methods=['POST'])
+def sigmin():
+     username=request.form['username']
+     password =request.form['password']
+     if username and password:
+        return json.dumps({'validation': validate(username,password)})
+     return json.dumps({'validation':False})
+[9/27, 21:55] Jeffo: <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>Signin Template · Bootstrap v5.2</title>
 
-Here are some ideas to get you started:
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    
+
+    
+
+<link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Favicons -->
+
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
